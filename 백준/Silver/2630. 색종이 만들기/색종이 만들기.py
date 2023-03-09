@@ -7,10 +7,9 @@ def paper(x, y, N):
     for i in range(x, x + N):
         for j in range(y, y + N):
             if check != arr[i][j]:
-                paper(x, y, N // 2)
-                paper(x + N // 2, y, N // 2)
-                paper(x, y + N // 2, N // 2)
-                paper(x + N // 2, y + N // 2, N // 2)
+                for k in range(2):
+                    for l in range(2):
+                        paper(x + k * N//2, y + l * N//2, N//2)
                 return
 
     if check == 0:
