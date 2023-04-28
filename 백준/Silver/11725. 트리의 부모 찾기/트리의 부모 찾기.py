@@ -3,27 +3,28 @@ import sys
 input = sys.stdin.readline
 
 def bfs(start):
-    queue = deque()
-    queue.append(start)
- 
-    while queue:
-        v = queue.popleft()
-        for i in graph[v]:
+    deq = deque()
+    deq.append(start)
+
+    while deq:
+        v = deq.popleft()
+        for i in tree[v]:
             if parent[i] == 0:
                 parent[i] = v
-                queue.append(i)
-                
+                deq.append(i)
+
+
 N = int(input())
- 
-graph = [[] for _ in range(N+1)]
-parent = [0 for _ in range(N+1)]
- 
-for i in range(N-1):
+
+tree = [[] for _ in range(N + 1)]
+parent = [0 for _ in range(N + 1)]
+
+for i in range(N - 1):
     a, b = map(int, input().split())
-    graph[a].append(b)
-    graph[b].append(a)
- 
+    tree[a].append(b)
+    tree[b].append(a)
+
 bfs(1)
- 
+
 for i in parent[2:]:
     print(i)
