@@ -21,7 +21,7 @@ def dfs(x, y, d):
 
     dfs(nx, ny, d)
 
-    
+
 N, M = map(int, input().split())
 x, y, d = map(int, input().split())
 arr = [list(map(int, input().split())) for _ in range(N)]
@@ -29,7 +29,6 @@ arr = [list(map(int, input().split())) for _ in range(N)]
 dx = [-1, 0, 1, 0]
 dy = [0, 1, 0, -1]
 
-arr[x][y] = 9
-cnt = 1
+cnt = 0
 
 dfs(x, y, d)
