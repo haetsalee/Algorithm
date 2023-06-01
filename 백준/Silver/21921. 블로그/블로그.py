@@ -12,8 +12,7 @@ else:
     cnt = 1
 
     for i in range(X, N):
-        total -= visitor[i-X]
-        total += visitor[i]
+        total += visitor[i] - visitor[i-X]
 
         if total > max_visitor:
             max_visitor = total
