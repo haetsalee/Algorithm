@@ -16,14 +16,16 @@ vector<int> result;
 void dfs(int x, int y) {
 	int nx, ny;
 
-	visited[x][y] = true;
+	visited[x][y] = 1;
 	cnt++;
 
 	for (int k = 0; k < 4; k++) {
 		nx = x + dx[k];
 		ny = y + dy[k];
 
-		if (nx >= 0 && ny >= 0 && nx < M && ny < N && visited[nx][ny]==0) {
+        if (nx < 0 || ny < 0 || nx >= M || ny >= N) continue;
+        
+		if (visited[nx][ny]==0) {
 			dfs(nx, ny);
 		}
 	}
