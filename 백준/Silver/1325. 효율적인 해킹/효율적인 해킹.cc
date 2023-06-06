@@ -38,7 +38,7 @@ int main() {
 
 	for (int i = 1; i <= N; i++) {
 		cnt = 0;
-		fill_n(visited, 100001, -1);
+		fill_n(visited, 100001, 0);
 		dfs(i);
 
 		if (cnt > maxCnt) {
