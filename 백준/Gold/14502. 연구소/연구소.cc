@@ -1,6 +1,6 @@
 #include <iostream>
-#include <queue>
 #include <cstring>
+#include <queue>
 using namespace std;
 
 const int maxN = 8;
@@ -16,6 +16,20 @@ struct Node {
 	int x;
 	int y;
 };
+
+void safezone(int temp[maxN][maxN]) {
+	int cnt = 0;
+
+	for (int i = 0; i < N; i++) {
+		for (int j = 0; j < M; j++) {
+			if (temp[i][j] == 0) {
+				cnt += 1;
+			}
+		}
+	}
+    
+	maxCnt = max(cnt, maxCnt);
+}
 
 void bfs()
 {
@@ -48,19 +62,8 @@ void bfs()
 		}
 	}
 
-	int cnt = 0;
-
-	for (int i = 0; i < N; i++) {
-		for (int j = 0; j < M; j++) {
-			if (temp[i][j] == 0) {
-				cnt += 1;
-			}
-		}
-	}
-	
-	maxCnt = max(cnt, maxCnt);
+	safezone(temp);
 }
-
 
 void wall(int cnt)
 {
