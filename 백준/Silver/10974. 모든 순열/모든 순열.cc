@@ -18,7 +18,7 @@ void perm(int now)
 	for (int i = 0; i < N; i++) {
 		if (visited[i] == 1) continue;
 		
-		visited[i] = true;
+		visited[i] = 1;
 		num[now] = i + 1;
 		perm(now + 1);
 		visited[i] = 0;
