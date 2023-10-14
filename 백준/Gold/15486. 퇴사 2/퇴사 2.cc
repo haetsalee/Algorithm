@@ -4,18 +4,26 @@ using namespace std;
 
 #define MAX 1500001
 
-int dp[MAX];
+int T[MAX], P[MAX];
+int dp[MAX] = {0, };
 
-int main()
-{
-    int N, days, money;
+int main() {
+    int N;
     cin >> N;
     
-    for (int today=1; today<=N; today++) {
-        cin >> days >> money;
-        dp[today + days] = max(dp[today + days], dp[today] + money);
-        dp[today+1] = max(dp[today], dp[today+1]);
+    for(int i = 1; i <= N; i++) {
+        cin >> T[i] >> P[i];
     }
-        
+    
+    for(int i=1; i<=N+1; i++) {
+        dp[i] = max(dp[i], dp[i-1]);
+
+        if(i + T[i] <= N+1) {
+            dp[i + T[i]] = max(dp[i + T[i]], dp[i] + P[i]);
+        }
+    }
+    
     cout << dp[N+1] << "\n";
+    
+    return 0;
 }
