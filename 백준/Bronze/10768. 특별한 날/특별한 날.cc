@@ -6,15 +6,10 @@ int main()
     int M, D;
     cin >> M >> D;
     
-    if (M < 2)
+    if (M == 1 || (M == 2 && D < 18))
         cout << "Before";
-    else if (M > 2)
-        cout << "After";
+    else if (M == 2 && D == 18)
+        cout << "Special";
     else
-        if (D < 18)
-            cout << "Before";
-        else if (D == 18)
-            cout << "Special";
-        else
-            cout << "After";
+        cout << "After";
 }
