@@ -31,7 +31,7 @@ int main() {
     
     solve(0);
     
-    cout << maxEnergy << endl;
+    cout << maxEnergy << "\n";
     
     return 0;
 }
