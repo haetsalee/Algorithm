@@ -10,14 +10,8 @@ pair<int, int> cleaner[2];
 int arr[MAX][MAX];
 int copyArr[MAX][MAX];
 
-struct Node {
-	int x, y;
-};
-
 int dx[4] = {1, 0, -1, 0};
 int dy[4] = {0, 1, 0, -1};
-
-int cnt = 0;
 
 void spreadDust() {
 	for (int i = 0; i < R; i++) {
